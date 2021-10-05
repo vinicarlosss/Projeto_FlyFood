@@ -80,5 +80,4 @@ while contador < len(circuitos):
                 melhorCircuito[0] = circuitos[contador]
     tempo = 0
     contador += 1
-print(melhorTempo)
 print("O melhor circuito para fazer as entregas é: " + ' '.join(melhorCircuito[0]))
