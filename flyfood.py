@@ -8,10 +8,6 @@ def modulo(termOne, termTwo):
 def distancia(termOne, termTwo):
     return termOne+termTwo
 
-def fatorial(termOne):
-    if termOne == 1:
-        return 1
-    return termOne * fatorial(termOne-1)
 
 def Permutar(string):
     if len(string) == 1:
@@ -80,4 +76,5 @@ while contador < len(circuitos):
                 melhorCircuito[0] = circuitos[contador]
     tempo = 0
     contador += 1
+
 print("O melhor circuito para fazer as entregas é: " + ' '.join(melhorCircuito[0]))
