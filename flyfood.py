@@ -5,6 +5,7 @@ def modulo(termOne, termTwo):
         return resultado
     return resultado
 
+
 def distancia(termOne, termTwo):
     return termOne+termTwo
 
@@ -25,7 +26,10 @@ coordenadas = {}
 contador = 0
 for linha in arquivo:
     linha = linha.replace(" ","")
-    if contador > 0:
+    if contador == 0:
+        n = int(linha[0])
+        m = int(linha[1])
+    elif contador <= n:
         for i in linha:
             if i == 'R':
                 coordenadas['R'] = (contador, linha.index(i)+1)
@@ -45,8 +49,8 @@ while contador < len(circuitos):
         if circuitos[contador].index(i) == 0:
             xOne = coordenadas[f'R'][0]
             xTwo = coordenadas[f'{i}'][0]
-            yOne = coordenadas[f'{i}'][1]
-            yTwo = coordenadas['R'][1]
+            yOne = coordenadas['R'][1]
+            yTwo = coordenadas[f'{i}'][1]
             tempo += distancia(modulo(xTwo, xOne), modulo(yTwo, yOne))
             entregaAtual = i
 
@@ -76,5 +80,5 @@ while contador < len(circuitos):
                 melhorCircuito[0] = circuitos[contador]
     tempo = 0
     contador += 1
-
 print("O melhor circuito para fazer as entregas é: " + ' '.join(melhorCircuito[0]))
+
